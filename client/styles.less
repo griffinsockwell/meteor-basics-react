@@ -1,0 +1,128 @@
+@font: 'Abel', sans-serif;
+@submit: #50E3C2;
+@update: #4A90E2;
+@delete: #D0021B;
+@cancel: #F5A623;
+@save: #7ED321;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: @font;
+  background: #fff;
+}
+button,
+input[type=submit] {
+  flex: 1;
+  -webkit-flex: 1;
+  font-family: @font;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+input {
+  text-align: center;
+  font-family: @font;
+  &:focus {
+    outline: none;
+  }
+  &:invalid {
+    box-shadow: none;
+  }
+}
+header {
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  form {
+    display: flex;
+    display: webkit-flex;
+    input {
+      flex: 1;
+      -webkit-flex: 1;
+      height: 50px;
+      font-size: 1.1em;
+    }
+  }
+}
+ul {
+  list-style-type: none;
+  li div {
+    display: flex;
+    display: -webkit-flex;
+    border-bottom: 1px solid #aaa;
+    button {
+      flex: 1;
+      -webkit-flex: 1;
+      border: none;
+      font-size: 0.9em;
+    }
+    span {
+      flex: 2;
+      -webkit-flex: 2;
+      text-align: center;
+      height: 44px;
+      line-height: 44px;
+    }
+    form {
+      flex: 5;
+      -webkit-flex: 5;
+      display: flex;
+      display: -webkit-flex;
+      input {
+        flex: 2;
+        -webkit-flex: 2;
+        border: none;
+        height: 44px;
+        font-size: 1em;
+        &[type=submit] {
+          font-size: 0.9em;
+        }
+        &:focus {
+          border-bottom: 1px solid @update;
+        }
+      }
+    }
+  }
+}
+.submit {
+  background: @submit;
+  &:hover {
+    background: darken(@submit, 20%);
+  }
+}
+.update {
+  background: @update;
+  &:hover {
+    background: darken(@update, 20%);
+  }
+}
+.delete {
+  background: @delete;
+  &:hover {
+    background: darken(@delete, 20%);
+  }
+}
+.cancel {
+  background: @cancel;
+  &:hover {
+    background: darken(@cancel, 20%);
+  }
+}
+.save {
+  background: @save;
+  &:hover {
+    background: darken(@save, 20%);
+  }
+}
+.no-elements,
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+}
